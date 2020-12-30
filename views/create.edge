@@ -1,0 +1,52 @@
+@layout('layouts.app')
+@section('content')
+ 
+
+<header class="masthead" style="background-image:url('assets/img/write-blog.jpg'); background-size:cover;">
+  <div class="overlay"></div>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-10 col-lg-8 mx-auto">
+              <div class="site-heading" style = 'display:flex; justify-content: center;'>
+                  <form action="/posts/store" method="POST" encType="multipart/form-data">
+
+                    <h2>Title</h2>
+                    <span class="subheading">
+                      <input type="text" name="title" style="height:40px; width:600px; border-radius: 8px; padding: 10px;" required>
+                    </span>
+
+                    <br>
+                    <h2>Username</h2>
+                    <span class="subheading">
+                    <input type="text" name="username" placeholder="{{ user.username }} "style="height:40px; width:600px; border-radius: 8px; padding: 10px;" required>
+                    </span>
+
+                    <br>
+                    <h2>Description</h2>
+                    <span class="subheading">
+                      <input type="text" name="description" style="height:40px; width:600px; border-radius: 8px; padding: 10px;" required>
+                    </span>
+
+                    <br>
+
+                    <h2 style="font-weight: 700; margin-top: 25px; margin-bottom: -2px;"> Write your Content below</h2>
+                    
+                    <br>
+
+                    <textarea name="content" cols="110" rows="23" style= "padding: 10px; background-color:rgba(246, 238, 248, 0.795); border-radius: 8px;"> </textarea>
+
+                    <h2>Image</h2>
+                    <span class="subheading">
+                      <input type="file" name="image" class="form-control-file" required>
+                    </span>
+                    <br>
+                    <input type="reset" style="margin-top: 10px;margin-bottom: 15px; width: 90px; border-radius: 5px;"><br>
+
+                    <button class="btn btn-primary">Create Post</button>
+                  </form>
+                  </div>
+        </div>
+    </div>
+</div>
+</header>
+@endsection
